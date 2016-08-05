@@ -1,0 +1,41 @@
+﻿@using BlogKovalenko.DAL.Entities
+@model Poll
+
+
+<form id="form1" class="@Model.Sum" >
+    @foreach (Variant item in Model.Variants)
+    {
+
+
+
+        <label >@item.Text</label>
+        <div id="@item.VariantId" class="@item.Vote" style="height: 20px; background-color: aqua"></div>
+        <br />
+
+
+    }
+</form>
+
+
+<script type="text/javascript">
+
+
+
+    function variant(id, count, sum)
+    {
+        var pollDiv = document.getElementById(id);
+        var buf = count * 100/sum;
+        var bufstr = buf + "string";
+       var bufstring = bufstr.split('.')[0].split('s')[0]+"%" ;
+
+        pollDiv.innerHTML = "<p>" + bufstring + "</p>";
+        pollDiv.style.width = bufstring;
+        pollDiv.style.textAlign = "center";
+    }
+    variant("1", document.getElementById("1").className, document.getElementById("form1").className);
+    variant("2", document.getElementById("2").className, document.getElementById("form1").className);
+    variant("3", document.getElementById("3").className, document.getElementById("form1").className);
+    variant("4", document.getElementById("4").className, document.getElementById("form1").className);
+    variant("5", document.getElementById("5").className, document.getElementById("form1").className);
+
+</script>

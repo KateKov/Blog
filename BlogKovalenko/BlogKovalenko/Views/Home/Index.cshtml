@@ -1,0 +1,62 @@
+﻿@using BlogKovalenko.DAL.Entities
+@using BlogKovalenko.Controllers
+
+@model IEnumerable<Article>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+    @{
+        foreach (var item in Model)
+        {
+           
+        <h3>@item.Title</h3>
+       @Html.DisplayFor(modelitem=>item.Date)
+        <img class="imgcent" src="@item.Photo" height="300" />
+        <p>
+            @item.Text.Substring(0, 200)
+        </p>
+        <p id="ind1"></p>
+        @Html.ActionLink("Подробнее", "ArticleDetail", new { id = item.ArticleId })
+            <p> 
+                Теги:
+                @foreach(Tag t in item.Tags){
+                   @Html.ActionLink(t.Title, "TagDetail", new { id = t.TagId }); 
+                }
+            </p>
+            <hr />
+        }
+    }
+     {
+        <div id="poll" class="poll2id"></div>
+     }
+
+     {
+        <div id="ip" class=@Session["isfirstsubmit"]></div>
+     }
+       
+           
+           
+            
+  
+<script type="text/javascript" >
+    if (window.addEventListener) window.addEventListener("load", init, false);
+    else if (window.attachEvent) window.attachEvent("onload", init);
+    function init() {
+        document.getElementById("pollid").hidden = "";
+        document.getElementById("poll2id").hidden = "hidden";
+        form1.onsubmit = onsubmitHandler;
+    }
+    function onsubmitHandler()
+    {
+        if (document.getElementById("ip").className != "false") {
+            document.getElementById("pollid").hidden = "hidden";
+            document.getElementById("poll2id").hidden = "";
+        }
+    }
+</script>
+

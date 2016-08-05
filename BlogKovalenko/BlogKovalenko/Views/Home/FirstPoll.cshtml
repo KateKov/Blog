@@ -1,0 +1,16 @@
+﻿@using BlogKovalenko.DAL.Entities
+
+@model Poll
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { name="form1"}))
+{
+    @Html.DisplayFor(model => model.Title)
+    foreach (Variant item in Model.Variants)
+    {
+        <br />
+        @Html.RadioButtonFor(m => m.SelectedVariant, item.Text)
+        <span>@item.Text</span>
+    }
+    <p><input type="submit" value="Отправить" /></p>
+}
+

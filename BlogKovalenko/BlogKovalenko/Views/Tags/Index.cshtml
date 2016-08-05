@@ -1,0 +1,46 @@
+﻿@using BlogKovalenko.DAL.Entities
+@model IEnumerable<Tag>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Главная</h3>
+
+<p>
+    @Html.ActionLink("Создать новый тег", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            <ul>
+                @foreach (Article art in item.Articles)
+                {
+                    <li>
+                        @Html.DisplayFor(modelItem => art.Title)
+                    </li>
+                }
+            </ul>
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.TagId }) |
+            @Html.ActionLink("Подробнее", "Details", new { id=item.TagId }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.TagId })
+        </td>
+    </tr>
+}
+
+</table>

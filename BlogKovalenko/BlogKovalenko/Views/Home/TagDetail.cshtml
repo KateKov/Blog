@@ -1,0 +1,27 @@
+﻿@using BlogKovalenko.DAL.Entities
+
+@model Tag
+
+@{
+    ViewBag.Title = "TagDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>@Model.Title</h3>
+<hr />
+
+@{
+    foreach (var item in Model.Articles)
+    {
+
+        <h3>@item.Title</h3>
+        @Html.DisplayFor(modelitem => item.Date)
+        <img class="imgcent" src="@item.Photo" height="300" />
+        <p>
+            @item.Text.Substring(0, 200)
+        </p>
+        <p id="ind1"></p>
+        @Html.ActionLink("Подробнее", "ArticleDetail", new { id = item.ArticleId })
+            <hr />
+    }
+}

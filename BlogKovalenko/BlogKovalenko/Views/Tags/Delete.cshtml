@@ -1,0 +1,35 @@
+﻿@model BlogKovalenko.DAL.Entities.Tag
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="quest_form">
+    <h2>Удалить</h2>
+
+    <h3>Вы уверены, что хотите удалть этот тег?</h3>
+    <div>
+        <h4>Тег</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Обратно к списку", "Index")
+            </div>
+        }
+    </div>
+   </div>

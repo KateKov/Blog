@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "FinishQuest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Результаты тестирования</h2>
+<p>@ViewBag.Form.Name @ViewBag.Form.Surname, Ваша анкета была успешно отправлена в @DateTime.Now</p> 
+<table>
+    <tr>
+        <td><p>Имя</p></td>
+        <td><p>@ViewBag.Form.Name</p></td>
+        </tr>
+    <tr>
+        <td><p>Фамилия</p></td>
+        <td><p>@ViewBag.Form.Surname</p></td>
+    </tr>
+    <tr>
+        <td><p>E-mail</p></td>
+        <td><p>@ViewBag.Form.Email</p></td>
+    </tr>
+    <tr>
+        <td><p>Адрес</p></td>
+        <td><p>@ViewBag.Form.Address</p></td>
+    </tr>
+    <tr>
+        <td><p>Возраст</p></td>
+        <td><p>@ViewBag.Form.Age</p></td>
+    </tr>
+    <tr>
+        <td><p>Телефон</p></td>
+        <td><p>@ViewBag.Form.Phone</p></td>
+    </tr>
+    <tr>
+        <td><p>Пол</p></td>
+        <td><p>@ViewBag.Form.Gender</p></td>
+    </tr>
+    <tr>
+        <td><p>Языки программирования</p></td>
+        <td>
+            <p>
+    @foreach (var b in @ViewBag.Form.Technologies)
+            {
+                if (@b.Checked == true)
+                {
+        <p>@b.Text; </p>
+        }
+    }
+        </p>
+    </td>
+    </tr>
+    <tr>
+        <td><p>Интересы</p></td>
+        <td>
+            <p>
+    @foreach (var b in @ViewBag.Form.Subject)
+    {
+        if (@b.Checked == true)
+        {
+        <p>@b.Text; </p>
+        }
+    }
+            </p>
+        </td>
+
+    </tr>
+    <tr>
+        <td><p>Языки</p></td>
+        <td>
+            <p>
+    @foreach (var b in @ViewBag.Form.Languages)
+    {
+        if (@b.Checked == true)
+        {
+        <p> @b.Text ; </p>
+        }
+    }
+            </p>
+        </td>
+
+    </tr>
+    <tr>
+        <td><p>Правильный ответ на проверочный вопрос</p></td>
+
+        <td><p>прага
+            </p></td>
+    </tr>
+        <tr>
+            
+            
+           
+          
+           
+        </tr>
+    
+</table>
+
+
+

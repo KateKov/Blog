@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogKovalenko", "BlogKovalenko\BlogKovalenko.csproj", "{174D0F6F-E822-44EC-B5D0-F5752BF6C66C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogKovalenko.DAL", "BlogKovalenko.DAL\BlogKovalenko.DAL.csproj", "{ADBF7A6B-29DE-4AAA-8030-1E23286A8A17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{174D0F6F-E822-44EC-B5D0-F5752BF6C66C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{174D0F6F-E822-44EC-B5D0-F5752BF6C66C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{174D0F6F-E822-44EC-B5D0-F5752BF6C66C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{174D0F6F-E822-44EC-B5D0-F5752BF6C66C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADBF7A6B-29DE-4AAA-8030-1E23286A8A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADBF7A6B-29DE-4AAA-8030-1E23286A8A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADBF7A6B-29DE-4AAA-8030-1E23286A8A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADBF7A6B-29DE-4AAA-8030-1E23286A8A17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

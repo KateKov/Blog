@@ -1,0 +1,58 @@
+﻿@using BlogKovalenko.Controllers
+@using BlogKovalenko.Models
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div class="header">
+        <p>
+            <a name="top"><h2> Личный блог </h2></a>
+        </p>
+    </div>
+    <div class="layout">
+        <div class="sidebar" id="right-sidebar">
+            <h2>Меню</h2>
+            <ul class="menu">
+                <hr />
+                <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+                <hr />
+                <li>@Html.ActionLink("Гостевая", "Review", "Home")</li>
+                <hr />
+                <li>@Html.ActionLink("Анкета", "Quest", "Home")</li>
+                <hr />
+            </ul>
+            <ul>
+                <li> @Html.Label("Репозитории")</li>
+                <hr />
+                <li>@Html.ActionLink("Статей", "Index", "Articles")</li>
+                <hr />
+                <li>@Html.ActionLink("Авторов", "Index", "Authors")</li>
+                <hr />
+                <li>@Html.ActionLink("Тегов", "Index", "Tags")</li>
+                <hr />
+            </ul>
+            @*<div id="pollid" hidden="hidden">
+                @Html.Partial("FirstPoll", (new HomeController()).poll)
+            </div>
+            <div id="poll2id" hidden="hidden">
+                @Html.Partial("SecondPoll", (new HomeController()).poll)
+            </div>*@
+        </div>
+        <div class="content">
+            @RenderBody()
+        </div>
+    <div class="footer">
+        <a href="#top">Наверх</a>
+        <p>
+            &copy; Создано Коваленко Е.В., 2016
+        </p>
+    </div>
+        </div>
+</body>
+</html>

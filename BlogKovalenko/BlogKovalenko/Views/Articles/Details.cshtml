@@ -1,0 +1,73 @@
+﻿@using BlogKovalenko.DAL.Entities
+@model Article
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="quest_form">
+    <h2>Подробнее</h2>
+
+    <div>
+        <h4>Статья</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.Label("Фамилия и имя автора")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Authors.Surname)<br />
+                @Html.DisplayFor(model => model.Authors.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Photo)
+            </dt>
+
+            <dd>
+                <img src="@Model.Photo" alt="@Model.Title" width="200" />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Tags)
+            </dt>
+
+            <dd>
+                <ul>
+                    @foreach (var tag in Model.Tags)
+                    {
+                        <li> @Html.DisplayFor(modelItem => tag.Title) </li>
+                    }
+                </ul>
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Text)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Text)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Редактировать", "Edit", new { id = Model.ArticleId }) |
+        @Html.ActionLink("Обратно к списку", "Index")
+    </p>
+    </div>

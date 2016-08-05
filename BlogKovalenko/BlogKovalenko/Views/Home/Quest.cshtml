@@ -1,0 +1,113 @@
+﻿@model BlogKovalenko.Models.ViewModels.Form
+@{
+    ViewBag.Title = "Quest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    string[] ages = new string[70];
+    for (int i = 8; i < 78; i++)
+    {
+        ages[i - 8] = i.ToString();
+    }
+}
+@{ 
+    string[] cities = new string[] { "кагоич", "сонтоб", "гарап", "нангивошт" };
+}
+@using BlogKovalenko.Helpers
+<div id="quest_form">
+<h2>Анкета</h2>
+
+@using (Html.BeginForm("Quest", "Home", FormMethod.Post, new { @name = "form1" }))
+{
+
+    @Html.HiddenFor(m => m.FormId)
+    <div class="inp">
+        @Html.LabelFor(m => m.Name, "Введите свое имя")
+    </div>
+    <br />
+    @Html.TextBoxFor(m => m.Name)
+    <br /><br />
+    <div class="inp">
+        @Html.LabelFor(m => m.Surname, "Введите свою фамилию")
+        </div>
+        <br />
+        @Html.TextBoxFor(m => m.Surname)
+        <br /><br />
+        <div class="inp">
+            @Html.LabelFor(m => m.Email, "Введите e-mail")
+            </div>
+            <br />
+            @Html.TextBoxFor(m => m.Email)
+            <br /><br />
+            <div class="inp">
+                @Html.LabelFor(m => m.Address, "Введите адрес")
+                </div>
+                <br />
+                @Html.TextBoxFor(m => m.Address)
+                <br /><br />
+                @Html.LabelFor(m => m.Gender, "Выберите пол")
+                <br />
+                @Html.RadioButtonFor(m => m.Gender, "Мужской")
+                <span>Мужской</span>
+                <br />
+                @Html.RadioButtonFor(m => m.Gender, "Женский")
+                <span>Женский</span>
+                <br /><br />
+                @Html.DropDownListFor(m => m.Age, new SelectList(ages), "Возраст")
+                <br /> <br />
+                @Html.LabelFor(m => m.Phone, "Введите мобильный телефон")
+                <br />
+                @Html.TextBoxFor(m => m.Phone)
+                <br /><br />
+                @Html.LabelFor(m => m.Subject, "Выберите свои увлечения")
+                <br />
+                <div class="checkbox">
+                    @for (int i = 0; i < Model.Subject.Count; i++)
+                    {
+                        @Html.CheckBoxFor(m => m.Subject[i].Checked, new { id = "subject_" + i })
+                        @Html.HiddenFor(m => m.Subject[i].Text)
+                        @Html.DisplayFor(m => m.Subject[i].Text)
+                        <br />
+                    }
+                </div>
+                <br />
+                @Html.LabelFor(m => m.Technologies, "Выберите языки программирования, которые знаете")
+                <br />
+                <div class="checkbox">
+                    @for (int i = 0; i < Model.Technologies.Count; i++)
+                    {
+                        @Html.CheckBoxFor(m => m.Technologies[i].Checked, new { id = "technologies_" + i })
+                        @Html.HiddenFor(m => m.Technologies[i].Text)
+                        @Html.DisplayFor(m => m.Technologies[i].Text)
+                        <br />
+                    }
+                </div>
+                <br />
+                @Html.LabelFor(m => m.Languages, "Выберите языки, которыми владеете")
+                <br />
+                <div class="checkbox">
+                    @for (int i = 0; i < Model.Languages.Count; i++)
+                    {
+                        @Html.CheckBoxFor(m => m.Languages[i].Checked, new { id = "languages_" + i })
+                        @Html.HiddenFor(m => m.Languages[i].Text)
+                        @Html.DisplayFor(m => m.Languages[i].Text)
+                        <br />
+                    }
+                </div>
+                <br />
+                @Html.LabelFor(m => m.IqQuestion, "Найдите сочетание, которое не образует название города в США и расшифруйте его")
+                <br />
+                @Html.CreateList(cities);
+    <div class="inp">
+        @Html.TextBoxFor(m => m.IqQuestion)
+        </div>
+        <br /><br />
+        @Html.LabelFor(m => m.AddInfo, "Дополнительная информация о вас")
+        <br />
+        @Html.TextAreaFor(m => m.AddInfo, 10, 9, null)
+        <p><input type="submit" value="Отправить" /></p>
+
+}
+    </div>
+<script type="text/javascript" src="../../scripts/js3.js">
+</script>

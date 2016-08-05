@@ -1,0 +1,66 @@
+﻿@using BlogKovalenko.DAL.Entities
+@model Tag
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="quest_form">
+<h2>Подробно</h2>
+
+<div>
+    <h4>Тег</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.Label("Названия статьи")
+        </dt>
+
+        <dd>
+                        @foreach (Article art in Model.Articles)
+            {
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(modelitem => art.Title)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(modelitem => art.Title)
+                                </dd>
+                                <dt>
+                                    @Html.DisplayNameFor(modelitem => art.Text)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(modelitem => art.Text)
+                                </dd>
+                                <dt>
+                                    @Html.DisplayNameFor(modelitem => art.Photo)
+                                </dt>
+                                <dd>
+                                    <img src="@art.Photo" class="imgcent" width="300" />
+                                </dd>
+                                <dt>
+                                    @Html.Label("Автор")
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(modelitem => art.Authors.Surname)
+                                    @Html.DisplayFor(modelitem => art.Authors.Name)
+                                </dd>
+
+                                </dl>
+                                }
+</dd>
+
+    </dl>
+</div>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.TagId }) |
+    @Html.ActionLink("Обратно к списку", "Index")
+</p>

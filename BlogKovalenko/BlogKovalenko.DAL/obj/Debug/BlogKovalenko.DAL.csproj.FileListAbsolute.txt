@@ -1,0 +1,10 @@
+c:\users\катя\documents\visual studio 2015\Projects\BlogKovalenko\BlogKovalenko.DAL\bin\Debug\BlogKovalenko.DAL.dll.config
+c:\users\катя\documents\visual studio 2015\Projects\BlogKovalenko\BlogKovalenko.DAL\bin\Debug\BlogKovalenko.DAL.dll
+c:\users\катя\documents\visual studio 2015\Projects\BlogKovalenko\BlogKovalenko.DAL\bin\Debug\BlogKovalenko.DAL.pdb
+c:\users\катя\documents\visual studio 2015\Projects\BlogKovalenko\BlogKovalenko.DAL\bin\Debug\EntityFramework.dll
+c:\users\катя\documents\visual studio 2015\Projects\BlogKovalenko\BlogKovalenko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\катя\documents\visual studio 2015\Projects\BlogKovalenko\BlogKovalenko.DAL\bin\Debug\EntityFramework.xml
+c:\users\катя\documents\visual studio 2015\Projects\BlogKovalenko\BlogKovalenko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\катя\documents\visual studio 2015\Projects\BlogKovalenko\BlogKovalenko.DAL\obj\Debug\BlogKovalenko.DAL.dll
+c:\users\катя\documents\visual studio 2015\Projects\BlogKovalenko\BlogKovalenko.DAL\obj\Debug\BlogKovalenko.DAL.pdb
+c:\users\катя\documents\visual studio 2015\Projects\BlogKovalenko\BlogKovalenko.DAL\obj\Debug\BlogKovalenko.DAL.csprojResolveAssemblyReference.cache

@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Гостевая";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="review">
+    <h2> Отзывы </h2>
+    <ol class="comments">
+        @foreach (var b in ViewBag.Reviews)
+        {
+        <li>
+            <div class="comment_box ">
+                <div class="comment_text">
+                    <div class="comment_author">@b.Person<span class="date">@b.Date</span></div>
+                    <p>@b.Text</p>
+               </div>
+            </div>
+
+        </li>
+        }
+    </ol>
+    <form name="form1" class="rev">
+        <input type="button" name="rev" value="Оставить отзыв"/>
+    </form>
+    <div id="comment_form">
+        <form method='post' name='form2' id='comments' hidden="hidden">
+            <input type="hidden" value="@ViewBag.Id" name="Id" />
+        </form>
+</div>
+</div>
+<script type="text/javascript" src="../../scripts/js2.js"></script>
